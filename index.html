@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiger Jump Game</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onclick="jump()">
+    <audio id="bgm" loop>
+		<source src="./mixkit-arcade-race-game-countdown-1952.wav" type="audio/mpeg">
+	</audio>
+
+
+    <div class="game-container">
+        <div class="score-card">
+            <span>HIGH SCORE</span>
+            <span class="high-score"></span>
+            <span class="score"></span>
+        </div>
+        <div class="player"></div>
+
+	    <div class="obstacle"></div>
+
+        <div class="restart-game">
+            <div class="content">
+                <span class="text">RESTART</span>
+                <button onclick="restart()" class="btn-reset-game"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
