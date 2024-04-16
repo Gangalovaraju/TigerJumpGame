@@ -1,0 +1,143 @@
+/* @font-face {
+    font-family: Minecraft;
+    src: url('./assets/Minecraft.ttf');
+} */
+
+.game-container {
+    width: 1000px;
+    height: 450px;
+    margin: 20px auto;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+    background-image: url('./assets/forest2.jpg');
+    background-size: contain;
+    animation: bg-move 30s linear infinite;
+}
+
+@keyframes bg-move {
+    0% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: -49%;
+    }
+}
+
+.player {
+    width: 160px;
+    height: 86px;
+    /* border: 1px solid blue; */
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    background-image: url('./assets/bengals-who.gif');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.player.jump {
+    animation: jump 1.5s infinite;
+    background-image: url('./assets/bengals-who.gif');
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    25% {
+        bottom: 250px;
+    }
+    40% {
+        bottom: 250px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.obstacle {
+    width: 60px;
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 80%;
+    /* border: 1px solid red; */
+    animation: move 3s linear infinite;
+    background-image: url('./assets/obstacle.png');
+    background-size: contain;
+}
+
+.obstacle-xs { width: 30px; height: 70px; }
+.obstacle-s { width: 60px; height: 80px; }
+.obstacle-m { width: 90px; height: 90px; }
+.obstacle-l { width: 120px; height: 120px; }
+
+@keyframes move {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -100px;
+    }
+}
+
+.score-card {
+    color: #fff;
+    font-family: Minecraft;
+    font-size: 50px;
+    margin: 20px;
+}
+
+.score-card span {
+    margin-right: 20px;
+}
+
+.restart-game {
+    visibility: hidden;
+    font-family: Minecraft;
+    background-color: #ffffffb8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    z-index: 2;
+}
+
+.restart-game.show {
+    visibility: visible;
+}
+
+.restart-game .content {
+    display: flex;
+}
+
+.restart-game .btn-reset-game {
+    border: none;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url('./assets/restart.png');
+    background-size: contain;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.restart-game .text {
+    align-self: end;
+}
+
+.stop.game-container, .stop .obstacle {
+    animation-play-state: paused;
+}
+
+.stop .player {
+    background-image: url('./assets/bengals-who.gif');
+}
