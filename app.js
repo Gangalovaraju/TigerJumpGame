@@ -152,3 +152,12 @@ function main() {
 };
 
 main();
+
+function showToast() {
+    var toaster = document.getElementById('toaster');
+    toaster.style.display = 'block'; 
+    setTimeout(function() {
+        toaster.style.display = 'none';
+    }, 3000);
+}
+window.onload = showToast;
